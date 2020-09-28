@@ -35,4 +35,4 @@ Classifier: ChimeraX :: Command :: MorphOT barycenterSave :: General ::
     Computes and save OT bayrcenter of volumes
 Classifier: ChimeraX :: Command :: MorphOT linearBarycenterSave :: General ::
     Computes and save OT bayrcenter of volumes
-Requires-Python: >= 3.6
+Requires-Python: >=3.7
