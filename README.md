@@ -52,6 +52,8 @@ fitmap #4 in #8
 volume resample #8 onGrid #1
 ```
 
+Remark: This pre-processing is notably meant to remove the noise around the structure, otherwise the interpolation will try to displace mass that is not part of the molecule, such as noisy blobs in the solvent region. Thresholding and smoothing is one way to deal with this but other approaches can be followed by the user to deal with this, possibly leveraging several tools available in ChimeraX. For instance, another possible strategy could be for the user to first mask the solvent region in the maps.
+
 ## Using MorphOT
 
 ### Not sure what options you have?
@@ -84,6 +86,8 @@ movie stop
 movie encode [path]
 ```
 
+Remark: the movie will be generated with voxel size 1.
+
 # Computing Time
 
 Here are the times MorphOT takes to run a trajectory of 25 frames with the previous maps, for both CPU and GPU implementations
@@ -97,5 +101,5 @@ Grid        | CPU (Intel(R) Xeon(R) Silver 4116 CPU @ 2.10GHz) | GPU (Tesla V100
 These animations display the result that one should obtain by following the tutorial above, comparing traditional linear interpolation (left) and the transport-based trajectory (right).
 Linear            |  MorphOT
 :-------------------------:|:-------------------------:
-![](5138_5140_linear.gif)  |  ![](5138_5140_OT.gif)
+![](.readme_material/5138_5140_linear.gif)  |  ![](.readme_material/5138_5140_OT.gif)
 
